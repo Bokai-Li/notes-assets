@@ -1,0 +1,54 @@
+Run - start a container
+
+docker run nginx
+
+
+Ps - list containers
+
+docker ps
+docker ps -a (includes exited container) 
+
+
+Stop - stop a container
+
+docker stop <name ex. silly_sammet> 
+
+
+Rm - remove a container
+
+docker rm <name ex. silly_sammet> 
+docker rm <id>
+
+
+Images - list images
+
+docker images
+docker image ls 
+
+
+rmi - Remove images
+
+docker rmi nginx
+
+
+Pull - download an image
+
+docker pull nginx
+
+
+Exec - execute a command
+
+(Ubuntu container)
+docker exec <name or container id> cat /etc/hosts
+
+
+Run - attach and detach
+
+docker run kodekloud/simple-webapp
+docker run -d kodekloud/simple-webapp
+docker attach <id ex. a043d>
+
+Run - interactive to OS container
+
+docker run -it centos bash
+

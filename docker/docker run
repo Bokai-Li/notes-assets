@@ -1,0 +1,28 @@
+Tags:
+
+docker run redis:4.0
+
+STDIN:
+(Interactive)
+docker run -i kodekloud/simple-prompt-docker
+(psudo terminal) with prompt 
+docker run -it kodekloud/simple-prompt-docker
+(Running a Ubuntu image and "get in")
+docker run -it ubuntu bash
+
+Port mapping:
+docker run -p 80:5000 kodekcloud/webapp
+(Mapping localhost:80 to docker host internal port 5000)
+
+Volume/directory mapping:
+docker run -v /opt/datadir:/var/lib/mysql mysql
+(Computer directory : docker internal directory)
+
+Inspect container:
+docker inspect blissful_hopper
+
+Container logs:
+docker logs blissful_hopper 
+
+ENV Variable:
+Docker run -e
