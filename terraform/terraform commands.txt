@@ -1,0 +1,31 @@
+Steps to spin up an instance on AWS:
+- Open AWS Account
+- Create IAM admin user for terraform (programmatic access)
+- Create terraform file to spin up t2.micro instance
+- Run terraform init, apply
+
+Common Terraform Commands:
+
+terraform init
+terraform plan
+terraform apply
+
+terraform destroy  
+
+
+terraform plan -out outfile
+terraform apply outfile
+
+terraform get (for external modules/github repo)
+terraform fmt 
+terraform graph
+terraform import [options] [REMOTE ADDRESS] [INSTANCE ID]
+terraform output [options] [NAME]
+terraform push (to hashcorp's Atlas)   
+terraform refresh (for checking remote state)
+terraform show
+terraform remote
+terraform state
+terraform taint
+terraform untaint
+terraform validate
