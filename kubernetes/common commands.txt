@@ -1,0 +1,31 @@
+
+pods:
+kubectl get pods
+kubectl get pods -o wide
+kubectl describe pods
+kubectl get pods webapp
+kubectl delete pod webapp
+kubectl run redis --image=redis --dry-run=client -o yaml > pod.yaml
+kubectl edit pod redis
+
+kubectl apply -f pod.yaml
+
+replicaset:
+kubectl create -f replicaset.yaml
+kubectl get replicaset
+kubectl describe replicaset myapp-replicaset
+kubectl scale replicaset myapp-replicaset --replicas=3
+
+deployment:
+kubectl get deployments
+kubectl get deployments <name>
+kubectl create -f <deployment>.yml
+kubectl create deployment httpd-frontend --image=httpd:2.4-alphine
+kubectl scale deployment --replica=3 httpd-frontend
+
+kubectl apply -f <deployment>.yml
+
+update & rollback
+kubectl rollout status deployment/<deployment name>
+kubectl rollout history deployment/<deployment name>
+kubectl rollout undo deployment/<deployment name>
