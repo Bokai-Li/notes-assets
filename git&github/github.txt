@@ -1,0 +1,9 @@
+basic:
+git clone <url>
+git remote -v
+git remote add <name> <url>
+	git remote rename <old> <new>
+	git remote remove <name>
+git push <remote> <branch>
+git push --set-upstream origin <branch> to connect local branch to remote branch so git push automatically push to the connected branch. This is equivalent to git push -u origin <branch>
+git push <local branch name>:<remote branch name>

@@ -1,0 +1,91 @@
+Basics:
+git init -> create .git
+git status
+git log
+git log --oneline
+git commit -a -m "message" 
+
+working directory -> staging area -> repository
+		git add		git commit
+git commit --amend (only amend to previous commit)
+you can configure git's default editor from vim to something else: (refer to git config doc"
+
+git tools:
+gitkraken, a GUI application for git
+gitignore.io, provides common ignore files for given language
+
+Branch:
+git branch
+git branch <branch-name> (create a new branch)  
+git switch <branch-name>
+
+git switch -c <branch-name> (create and switch a new branch)
+
+git branch -d <branch-name>
+git branch -D <branch-name> (force delete even not fully merged)
+git branch -m <branch-name> (rename)
+
+Merge:
+git checkout master
+git merge bugfix	  
+(Assuming merging bug fix to master branch)
+
+Resolve merge conflict:
+Can resolve using VS code or manual remove markers (and content you don't want)
+
+<<<<<<< HEAD is current change (current branch)
+>>>>>>> branch name is incoming change (branch that you are trying to merge)
+
+Save -> git add file, git commit -m "resolve conflict"
+
+
+git diff:
+git diff (view unstaged changes vs HEAD, or last commit)
+git diff HEAD (both unstaged and staged vs HEAD)  (all changes in working directory)
+git diff --stage / git diff --cached (staging vs Head)
+git diff HEAD [filename]
+git diff branch1 branch2
+git diff commitHash1 commitHash2
+
+How to read git diff:
+
+Two files
+Hash
+--- old file
++++ new file
+@@ - (old file) start, total, + (new file)start total @@
+
+git stash:
+git stash = git stash save
+git stash pop
+git stash apply (apply stash without removing it from the stash)
+git stash list 
+git stash apply stash@{2}
+git stash drop stash@{2}
+
+Time Travel:
+git checkout <commit-hash>
+(Detached Head)
+HEAD~1 (parent)
+HEAD~2 (grandparent) 
+git checkout HEAD~1
+git checkout - (just like cd -) 
+
+Discarding changes/un-modifying changes:
+git checkout HEAD <file-name>
+	equivalent to: git checkout -- <file-name>
+			  git restore <file-name> 
+git restore --source <commit-hash or HEAD~2> <file-name>
+git restore --source <commit-hash or HEAD~2> <file-name> <file-name2>
+
+Un-staging changes:
+git restore --staged secret.txt
+
+Undoing Commits:
+git reset <commit-hash>
+	only get rid of commits but not content in the files
+git reset --hard <commit-hash or HEAD~1>
+	get rid of commits and the actual changes in the files
+
+git revert <commit-hash>
+	creates a new commit which undo changes
